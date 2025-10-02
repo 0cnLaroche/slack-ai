@@ -29,7 +29,7 @@ app.event("message", async ({ event, client, logger }) => {
   try {
     if (event.channel === CHANNEL_ID && !event.subtype) {
       console.info(`Message received: ${event.text}`);
-      await IngestComment(bedRockClient, event.text);
+      await IngestComment(bedRockClient, event.text || "");
 
       // You can process or store the message here
     }
